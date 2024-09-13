@@ -1,12 +1,16 @@
-import authRoutes from "./routes/authRoute"
+import { connectDB } from "./config/db.js";
+import { ENV_VARS } from "./config/envVars.js";
+import authRoutes from "./routes/authRoute.js"
+import express from "express"
 
 
-const express = require('express')
 
 const app = express();
+const PORT = ENV_VARS.PORT
 
 app.use("/api/v1/auth", authRoutes)
 
-app.listen(5000, () => {
-    console.log("Server started at port 5000")
+app.listen(PORT, () => {
+    console.log("Server started at port " + PORT);
+    connectDB();
 })
