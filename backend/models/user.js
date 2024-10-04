@@ -14,5 +14,16 @@ const userSchema = mongoose.Schema({
     password: {
         type: String,
         required: true
+    },
+    image: {
+        type: String,
+        default: ""
+    },
+    searchHistory: {
+        type: Array,
+        default: []
     }
 })
+
+export const User = mongoose.model("User", userSchema);
+
