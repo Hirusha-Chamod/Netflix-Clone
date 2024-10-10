@@ -4,11 +4,14 @@ import { useState } from 'react';
 
 const SignUp = () => {
 
-  
-	const [email, setEmail] = useState("");
+  const {searchParams}=new URL(document.location)
+  const emailValue=searchParams.get("email")
+	const [email, setEmail] = useState(emailValue);
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 
+ 
+  
 
   return (
     <div className='h-screen w-full hero-bg'>
