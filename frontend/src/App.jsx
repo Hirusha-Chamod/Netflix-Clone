@@ -17,12 +17,12 @@ import { useEffect } from "react"
 
 function App() {
 
-  const { user, isCheckingAuth, authCheck } = useAuthStore();
+	const { user, isCheckingAuth, authCheck } = useAuthStore();
 
 	useEffect(() => {
 		authCheck();
 	}, [authCheck]);
-  if (isCheckingAuth) {
+	if (isCheckingAuth) {
 		return (
 			<div className='h-screen'>
 				<div className='flex justify-center items-center bg-black h-full'>
@@ -44,9 +44,9 @@ function App() {
 				<Route path='/*' element={<NotFoundPage />} />
 			</Routes>
 			<Footer />
-    <Toaster/>
-    </>
-  )
+			<Toaster />
+		</>
+	)
 
 }
 
